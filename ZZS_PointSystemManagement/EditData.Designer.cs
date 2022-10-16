@@ -37,15 +37,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.skinGroupBox1 = new CCWin.SkinControl.SkinGroupBox();
             this.skinGroupBox2 = new CCWin.SkinControl.SkinGroupBox();
-            this.detailText_tb = new System.Windows.Forms.RichTextBox();
-            this.pointChangeInput_tb = new System.Windows.Forms.TextBox();
-            this.close_btn = new CCWin.SkinControl.SkinButton();
-            this.save_btn = new CCWin.SkinControl.SkinButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pointChangeDetail_tb = new System.Windows.Forms.RichTextBox();
-            this.pointChange_lb = new System.Windows.Forms.ListBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.pointChangeInput_tb = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.detailText_tb = new System.Windows.Forms.RichTextBox();
+            this.close_btn = new CCWin.SkinControl.SkinButton();
+            this.pointChangeDetail_tb = new System.Windows.Forms.RichTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.save_btn = new CCWin.SkinControl.SkinButton();
+            this.pointChange_lb = new System.Windows.Forms.ListBox();
             this.skinGroupBox1.SuspendLayout();
             this.skinGroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -138,6 +138,7 @@
             this.skinGroupBox1.TitleBorderColor = System.Drawing.Color.DeepPink;
             this.skinGroupBox1.TitleRectBackColor = System.Drawing.Color.White;
             this.skinGroupBox1.TitleRoundStyle = CCWin.SkinClass.RoundStyle.All;
+            this.skinGroupBox1.Enter += new System.EventHandler(this.skinGroupBox1_Enter);
             // 
             // skinGroupBox2
             // 
@@ -166,6 +167,35 @@
             this.skinGroupBox2.TitleRectBackColor = System.Drawing.Color.White;
             this.skinGroupBox2.TitleRoundStyle = CCWin.SkinClass.RoundStyle.All;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.ForeColor = System.Drawing.Color.DeepPink;
+            this.label6.Location = new System.Drawing.Point(19, 289);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 20);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "详情";
+            // 
+            // pointChangeInput_tb
+            // 
+            this.pointChangeInput_tb.Location = new System.Drawing.Point(478, 327);
+            this.pointChangeInput_tb.Name = "pointChangeInput_tb";
+            this.pointChangeInput_tb.Size = new System.Drawing.Size(111, 26);
+            this.pointChangeInput_tb.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.ForeColor = System.Drawing.Color.DeepPink;
+            this.label4.Location = new System.Drawing.Point(19, 184);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 20);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "内容";
+            // 
             // detailText_tb
             // 
             this.detailText_tb.Location = new System.Drawing.Point(23, 312);
@@ -174,13 +204,6 @@
             this.detailText_tb.TabIndex = 23;
             this.detailText_tb.Text = "";
             this.detailText_tb.TextChanged += new System.EventHandler(this.detailText_tb_TextChanged);
-            // 
-            // pointChangeInput_tb
-            // 
-            this.pointChangeInput_tb.Location = new System.Drawing.Point(478, 327);
-            this.pointChangeInput_tb.Name = "pointChangeInput_tb";
-            this.pointChangeInput_tb.Size = new System.Drawing.Size(111, 26);
-            this.pointChangeInput_tb.TabIndex = 22;
             // 
             // close_btn
             // 
@@ -201,6 +224,27 @@
             this.close_btn.UseVisualStyleBackColor = false;
             this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
+            // pointChangeDetail_tb
+            // 
+            this.pointChangeDetail_tb.Location = new System.Drawing.Point(23, 207);
+            this.pointChangeDetail_tb.Name = "pointChangeDetail_tb";
+            this.pointChangeDetail_tb.ReadOnly = true;
+            this.pointChangeDetail_tb.Size = new System.Drawing.Size(566, 79);
+            this.pointChangeDetail_tb.TabIndex = 1;
+            this.pointChangeDetail_tb.Text = "";
+            this.pointChangeDetail_tb.TextChanged += new System.EventHandler(this.pointChangeDetail_tb_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.Color.DeepPink;
+            this.label3.Location = new System.Drawing.Point(480, 304);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 20);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "分数(扣分用-号)";
+            // 
             // save_btn
             // 
             this.save_btn.BackColor = System.Drawing.Color.Transparent;
@@ -220,27 +264,6 @@
             this.save_btn.UseVisualStyleBackColor = false;
             this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.Color.DeepPink;
-            this.label3.Location = new System.Drawing.Point(480, 304);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 20);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "分数(扣分用-号)";
-            // 
-            // pointChangeDetail_tb
-            // 
-            this.pointChangeDetail_tb.Location = new System.Drawing.Point(23, 207);
-            this.pointChangeDetail_tb.Name = "pointChangeDetail_tb";
-            this.pointChangeDetail_tb.ReadOnly = true;
-            this.pointChangeDetail_tb.Size = new System.Drawing.Size(566, 79);
-            this.pointChangeDetail_tb.TabIndex = 1;
-            this.pointChangeDetail_tb.Text = "";
-            this.pointChangeDetail_tb.TextChanged += new System.EventHandler(this.pointChangeDetail_tb_TextChanged);
-            // 
             // pointChange_lb
             // 
             this.pointChange_lb.FormattingEnabled = true;
@@ -250,28 +273,6 @@
             this.pointChange_lb.Size = new System.Drawing.Size(566, 144);
             this.pointChange_lb.TabIndex = 0;
             this.pointChange_lb.SelectedIndexChanged += new System.EventHandler(this.pointChange_lb_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.ForeColor = System.Drawing.Color.DeepPink;
-            this.label4.Location = new System.Drawing.Point(19, 184);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 20);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "内容";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.ForeColor = System.Drawing.Color.DeepPink;
-            this.label6.Location = new System.Drawing.Point(19, 289);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 20);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "详情";
             // 
             // EditData
             // 
@@ -284,6 +285,7 @@
             this.ClientSize = new System.Drawing.Size(694, 651);
             this.Controls.Add(this.skinGroupBox2);
             this.Controls.Add(this.skinGroupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MdiBackColor = System.Drawing.Color.White;
             this.Name = "EditData";

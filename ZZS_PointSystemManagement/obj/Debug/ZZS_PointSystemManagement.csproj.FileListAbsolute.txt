@@ -23,3 +23,4 @@
 \\Mac\Home\Documents\GitHub\ZZS_PointSystemManagement\ZZS_PointSystemManagement\obj\Debug\ZZS_PointSystemManagement.csproj.CopyComplete
 \\Mac\Home\Documents\GitHub\ZZS_PointSystemManagement\ZZS_PointSystemManagement\obj\Debug\ZZS_PointSystemManagement.exe
 \\Mac\Home\Documents\GitHub\ZZS_PointSystemManagement\ZZS_PointSystemManagement\obj\Debug\ZZS_PointSystemManagement.pdb
+\\Mac\Home\Documents\GitHub\ZZS_PointSystemManagement\ZZS_PointSystemManagement\obj\Debug\ZZS_PointSystemManagement.DataAnalyse.resources

@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAnalyse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataAnalyse.Designer.cs">
+      <DependentUpon>DataAnalyse.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Model\MainData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DataAnalyse.resx">
+      <DependentUpon>DataAnalyse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditData.resx">
       <DependentUpon>EditData.cs</DependentUpon>
     </EmbeddedResource>

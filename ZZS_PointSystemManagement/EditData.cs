@@ -248,5 +248,10 @@ namespace ZZS_PointSystemManagement
 
             }
         }
+
+        private void skinGroupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
