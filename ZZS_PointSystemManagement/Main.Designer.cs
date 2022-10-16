@@ -67,8 +67,6 @@
             this.threeMonth_lbl = new System.Windows.Forms.Label();
             this.monthly_lbl = new System.Windows.Forms.Label();
             this.teamRank_btn = new CCWin.SkinControl.SkinButton();
-            this.leaderRank_btn = new CCWin.SkinControl.SkinButton();
-            this.memberRank_btn = new CCWin.SkinControl.SkinButton();
             this.crown_team_point_lbl = new System.Windows.Forms.Label();
             this.crownTeam_lbl = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -81,6 +79,7 @@
             this.starTimer = new System.Windows.Forms.Timer(this.components);
             this.starleaderTimer = new System.Windows.Forms.Timer(this.components);
             this.crownTimer = new System.Windows.Forms.Timer(this.components);
+            this.threeMonthCrowns_rtb = new System.Windows.Forms.RichTextBox();
             this.skinGroupBox1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.skinGroupBox2.SuspendLayout();
@@ -534,17 +533,16 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(129, 20);
             this.label7.TabIndex = 10;
-            this.label7.Text = "Build 20221016b2";
+            this.label7.Text = "Build 20221016b3";
             // 
             // skinGroupBox3
             // 
             this.skinGroupBox3.BackColor = System.Drawing.Color.Transparent;
             this.skinGroupBox3.BorderColor = System.Drawing.Color.DarkGray;
+            this.skinGroupBox3.Controls.Add(this.threeMonthCrowns_rtb);
             this.skinGroupBox3.Controls.Add(this.threeMonth_lbl);
             this.skinGroupBox3.Controls.Add(this.monthly_lbl);
             this.skinGroupBox3.Controls.Add(this.teamRank_btn);
-            this.skinGroupBox3.Controls.Add(this.leaderRank_btn);
-            this.skinGroupBox3.Controls.Add(this.memberRank_btn);
             this.skinGroupBox3.Controls.Add(this.crown_team_point_lbl);
             this.skinGroupBox3.Controls.Add(this.crownTeam_lbl);
             this.skinGroupBox3.Controls.Add(this.label11);
@@ -606,40 +604,7 @@
             this.teamRank_btn.TabIndex = 27;
             this.teamRank_btn.Text = "班组季度排名";
             this.teamRank_btn.UseVisualStyleBackColor = false;
-            // 
-            // leaderRank_btn
-            // 
-            this.leaderRank_btn.BackColor = System.Drawing.Color.Transparent;
-            this.leaderRank_btn.BaseColor = System.Drawing.Color.DodgerBlue;
-            this.leaderRank_btn.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.leaderRank_btn.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.leaderRank_btn.DownBack = null;
-            this.leaderRank_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.leaderRank_btn.Location = new System.Drawing.Point(111, 310);
-            this.leaderRank_btn.MouseBack = null;
-            this.leaderRank_btn.Name = "leaderRank_btn";
-            this.leaderRank_btn.NormlBack = null;
-            this.leaderRank_btn.Size = new System.Drawing.Size(109, 35);
-            this.leaderRank_btn.TabIndex = 26;
-            this.leaderRank_btn.Text = "班组长排名";
-            this.leaderRank_btn.UseVisualStyleBackColor = false;
-            // 
-            // memberRank_btn
-            // 
-            this.memberRank_btn.BackColor = System.Drawing.Color.Transparent;
-            this.memberRank_btn.BaseColor = System.Drawing.Color.DodgerBlue;
-            this.memberRank_btn.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.memberRank_btn.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.memberRank_btn.DownBack = null;
-            this.memberRank_btn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.memberRank_btn.Location = new System.Drawing.Point(106, 156);
-            this.memberRank_btn.MouseBack = null;
-            this.memberRank_btn.Name = "memberRank_btn";
-            this.memberRank_btn.NormlBack = null;
-            this.memberRank_btn.Size = new System.Drawing.Size(109, 35);
-            this.memberRank_btn.TabIndex = 20;
-            this.memberRank_btn.Text = "评选排名";
-            this.memberRank_btn.UseVisualStyleBackColor = false;
+            this.teamRank_btn.Click += new System.EventHandler(this.teamRank_btn_Click);
             // 
             // crown_team_point_lbl
             // 
@@ -761,6 +726,15 @@
             this.crownTimer.Interval = 300;
             this.crownTimer.Tick += new System.EventHandler(this.crownTimer_Tick);
             // 
+            // threeMonthCrowns_rtb
+            // 
+            this.threeMonthCrowns_rtb.Location = new System.Drawing.Point(20, 41);
+            this.threeMonthCrowns_rtb.Name = "threeMonthCrowns_rtb";
+            this.threeMonthCrowns_rtb.Size = new System.Drawing.Size(281, 359);
+            this.threeMonthCrowns_rtb.TabIndex = 30;
+            this.threeMonthCrowns_rtb.Text = "";
+            this.threeMonthCrowns_rtb.TextChanged += new System.EventHandler(this.threeMonthCrowns_rtb_TextChanged);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -827,8 +801,6 @@
         private System.Windows.Forms.DateTimePicker month_dtp;
         private CCWin.SkinControl.SkinGroupBox skinGroupBox3;
         private CCWin.SkinControl.SkinButton teamRank_btn;
-        private CCWin.SkinControl.SkinButton leaderRank_btn;
-        private CCWin.SkinControl.SkinButton memberRank_btn;
         private System.Windows.Forms.Label crown_team_point_lbl;
         private System.Windows.Forms.Label crownTeam_lbl;
         private System.Windows.Forms.Label label11;
@@ -844,6 +816,7 @@
         private System.Windows.Forms.Label threeMonth_lbl;
         private System.Windows.Forms.Label monthly_lbl;
         private System.Windows.Forms.CheckBox withoutNO26_cb;
+        private System.Windows.Forms.RichTextBox threeMonthCrowns_rtb;
     }
 }
 

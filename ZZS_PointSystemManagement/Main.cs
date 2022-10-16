@@ -112,7 +112,7 @@ namespace ZZS_PointSystemManagement
             //找当前日期位于哪里
             //默认显示月度
             month_radioButton.Checked = true;
-
+            threeMonthCrowns_rtb.Visible = false;
             getStarAndCrown(0);
         }
 
@@ -823,14 +823,19 @@ namespace ZZS_PointSystemManagement
                     }
                     membersCount = Convert.ToDouble(teamDic[j].customText);
                     avgPoints = Math.Round(allPoints / membersCount, 2);
+                    //临时保存一下总分，后面替换掉
+                    teamDic[j].customText = teamDic[j].customText + "-" + allPoints.ToString();
                     teamDic[j].customDemical = avgPoints;
                 }
                 //比比谁的高
                 double maxPoints = 0;
                 string highestTeam = "";
+                string showCrownDetail = "班组季度排名：\n";
                 foreach(CustomList _model in teamDic)
                 {
-                    if(_model.customDemical > maxPoints)
+                    showCrownDetail = showCrownDetail + _model.name + "：共计" + _model.customText.Split('-')[0] + "人，共计" + _model.customText.Split('-')[1] + "分，平均" + _model.customDemical + "分。\n";
+                    _model.customText = _model.customText.Split('-')[0];
+                    if (_model.customDemical > maxPoints)
                     {
                         maxPoints = _model.customDemical;
                         highestTeam = _model.name;
@@ -838,6 +843,7 @@ namespace ZZS_PointSystemManagement
                 }
                 crownTeam_lbl.Text = highestTeam;
                 crown_team_point_lbl.Text = maxPoints.ToString() + "分";
+                threeMonthCrowns_rtb.Text = showCrownDetail;
             }
 
         }
@@ -1893,6 +1899,23 @@ namespace ZZS_PointSystemManagement
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             refreshData();
+        }
+
+        private void teamRank_btn_Click(object sender, EventArgs e)
+        {
+            if(threeMonthCrowns_rtb.Visible == true)
+            {
+                threeMonthCrowns_rtb.Visible = false;
+            }
+            else
+            {
+                threeMonthCrowns_rtb.Visible = true;
+            }
+        }
+
+        private void threeMonthCrowns_rtb_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
