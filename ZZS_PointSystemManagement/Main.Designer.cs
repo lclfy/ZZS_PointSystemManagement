@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.skinGroupBox1 = new CCWin.SkinControl.SkinGroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.withoutNO26_cb = new System.Windows.Forms.CheckBox();
             this.sixmonth_cb = new System.Windows.Forms.ComboBox();
             this.sixmonth_year_cb = new System.Windows.Forms.ComboBox();
             this.threemonth_cb = new System.Windows.Forms.ComboBox();
@@ -80,7 +81,6 @@
             this.starTimer = new System.Windows.Forms.Timer(this.components);
             this.starleaderTimer = new System.Windows.Forms.Timer(this.components);
             this.crownTimer = new System.Windows.Forms.Timer(this.components);
-            this.withoutNO26_cb = new System.Windows.Forms.CheckBox();
             this.skinGroupBox1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.skinGroupBox2.SuspendLayout();
@@ -136,6 +136,17 @@
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "筛选方式";
+            // 
+            // withoutNO26_cb
+            // 
+            this.withoutNO26_cb.AutoSize = true;
+            this.withoutNO26_cb.Location = new System.Drawing.Point(329, 106);
+            this.withoutNO26_cb.Name = "withoutNO26_cb";
+            this.withoutNO26_cb.Size = new System.Drawing.Size(140, 24);
+            this.withoutNO26_cb.TabIndex = 31;
+            this.withoutNO26_cb.Text = "公休除月度不统计";
+            this.withoutNO26_cb.UseVisualStyleBackColor = true;
+            this.withoutNO26_cb.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // sixmonth_cb
             // 
@@ -519,11 +530,11 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label7.Location = new System.Drawing.Point(1339, 662);
+            this.label7.Location = new System.Drawing.Point(1334, 663);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 20);
+            this.label7.Size = new System.Drawing.Size(129, 20);
             this.label7.TabIndex = 10;
-            this.label7.Text = "Build 20221016";
+            this.label7.Text = "Build 20221016b2";
             // 
             // skinGroupBox3
             // 
@@ -749,17 +760,6 @@
             // 
             this.crownTimer.Interval = 300;
             this.crownTimer.Tick += new System.EventHandler(this.crownTimer_Tick);
-            // 
-            // withoutNO26_cb
-            // 
-            this.withoutNO26_cb.AutoSize = true;
-            this.withoutNO26_cb.Location = new System.Drawing.Point(329, 106);
-            this.withoutNO26_cb.Name = "withoutNO26_cb";
-            this.withoutNO26_cb.Size = new System.Drawing.Size(140, 24);
-            this.withoutNO26_cb.TabIndex = 31;
-            this.withoutNO26_cb.Text = "公休除月度不统计";
-            this.withoutNO26_cb.UseVisualStyleBackColor = true;
-            this.withoutNO26_cb.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Main
             // 

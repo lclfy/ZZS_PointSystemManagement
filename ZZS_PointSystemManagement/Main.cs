@@ -1603,22 +1603,22 @@ namespace ZZS_PointSystemManagement
             {
                 titleRow.GetCell(j).CellStyle = normalStyle;
             }
+            List<Member> _allMembers = getPairedWithMemberAndDic(allMembers);
 
-
-            for (int i = 0; i < allMembers.Count; i++)
+            for (int i = 0; i < _allMembers.Count; i++)
             {
                 IRow dataRow = sheet.CreateRow(i + 2);
                 dataRow.CreateCell(0).SetCellValue((i+1).ToString());
-                dataRow.CreateCell(1).SetCellValue(allMembers[i].name);
-                dataRow.CreateCell(2).SetCellValue(allMembers[i].ID);
-                dataRow.CreateCell(3).SetCellValue(allMembers[i].teamName);
-                dataRow.CreateCell(4).SetCellValue(allMembers[i].jobName);
-                dataRow.CreateCell(5).SetCellValue(allMembers[i].postName);
-                dataRow.CreateCell(6).SetCellValue(allMembers[i].basePoint);
+                dataRow.CreateCell(1).SetCellValue(_allMembers[i].name);
+                dataRow.CreateCell(2).SetCellValue(_allMembers[i].ID);
+                dataRow.CreateCell(3).SetCellValue(_allMembers[i].teamName);
+                dataRow.CreateCell(4).SetCellValue(_allMembers[i].jobName);
+                dataRow.CreateCell(5).SetCellValue(_allMembers[i].postName);
+                dataRow.CreateCell(6).SetCellValue(_allMembers[i].basePoint);
                 //算分
-                dataRow.CreateCell(7).SetCellValue(calculateAddAndMinusPoint(allMembers[i],allMainData,true));
-                dataRow.CreateCell(8).SetCellValue(calculateAddAndMinusPoint(allMembers[i], allMainData, false));
-                dataRow.CreateCell(9).SetCellValue(allMembers[i].currentPoint);
+                dataRow.CreateCell(7).SetCellValue(calculateAddAndMinusPoint(_allMembers[i],allMainData,true));
+                dataRow.CreateCell(8).SetCellValue(calculateAddAndMinusPoint(_allMembers[i], allMainData, false));
+                dataRow.CreateCell(9).SetCellValue(_allMembers[i].currentPoint);
                 for(int k = 0; k < 10; k++)
                 {
                     dataRow.GetCell(k).CellStyle = normalStyle;
