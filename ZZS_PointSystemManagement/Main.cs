@@ -854,6 +854,14 @@ namespace ZZS_PointSystemManagement
                     {
                         if (targetDateIsInSelected(_model.originalDate))
                         {
+                            //公休不计入的情况：不以月度查看，按钮勾上了
+                            if (withoutNO26_cb.Checked && dateMode != 2)
+                            {
+                                if (_model.targetPointChangeID.Equals("26"))
+                                {
+                                    continue;
+                                }
+                            }
                             if (_allMembers[i].ID.Equals(_model.targetMemberID))
                             {
                                 _allMembers[i].currentPoint = _allMembers[i].currentPoint + _model.pointChange;
@@ -1878,6 +1886,12 @@ namespace ZZS_PointSystemManagement
         private void crownTimer_Tick(object sender, EventArgs e)
         {
             textScroll_Crown();
+        }
+
+        //公休
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            refreshData();
         }
     }
 }
