@@ -857,7 +857,8 @@ namespace ZZS_PointSystemManagement
                             //公休不计入的情况：不以月度查看，按钮勾上了
                             if (withoutNO26_cb.Checked && dateMode != 2)
                             {
-                                if (_model.targetPointChangeID.Equals("26"))
+
+                                if (findPointControlByID(_model.targetPointChangeID).Contains("公休"))
                                 {
                                     continue;
                                 }
